@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* This will remove any scrolling */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #8CC461;
+    font-family:'Roboto', sans-serif;
+
+}
+
+.top{
+    max-width: 100%;
+    width:600px;
+    border: 2px solid white;
+    margin-top: 3rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+
+}
+
+.logo{
+    font-size: 25px;
+}
+
+.score {
+    display: flex; /* Align cards in a row */
+    gap: 15px; /* Space between cards */
+    justify-content: space-between; /* Space cards evenly */
+    align-items: center;
+    
+    
+}
+
+.score-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3px;
+    align-items: center;
+    background: white;
+    height: 90px;
+    width: 90px;
+    color: rgb(87, 86, 86);
+    text-align: center;
+    border-radius: 7px;
+    font-size: small;
+}
+
+.score-value {
+    color: black;
+    font-size: 50px;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+ .game {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: 50px;
+}
+
+.triangle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.triangle .line {
+    position: absolute;
+    width: 100px; /* Adjust width for each line */
+    height: 10px; /* Thickness of the line */
+    background-color: #211f1fcb; /* Line color */
+}
+
+
+
+.triangle .icon {
+    position: absolute;
+    width: 90px; /* Adjust icon container size */
+    height: 90px;
+    background: white; /* White background for the circle */
+     /* Add border with a specific color (e.g., coral) */
+    border-radius: 50%; /* Make the container circular */
+    display: flex; /* Center the image inside the circle */
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+.top-icon {
+    top: 5%;
+    left: 10%; /* Center horizontally */
+    border: 10px solid #0074B6
+}
+
+.left-icon {
+    bottom: 50%; /* Adjust positioning slightly above the exact bottom */
+    left: 90%; /* Adjust closer to the bottom-left corner */
+    size-adjust: 80%;
+    border: 10px solid #BD00FF;
+}
+
+.right-icon {
+    bottom: -15%; /* Adjust positioning slightly above the exact bottom */
+    right: 8%; /* Adjust closer to the bottom-right corner */
+    border: 10px solid #FFA943
+}
+
+.triangle img {
+    width: 100%; /* Make the icons responsive */
+    height: auto;
+}
+
+.triangle .left-icon img {
+    width: 60%; /* Adjust the image size */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+
+.triangle.icon:hover {
+    background-color: #45a049;
+}
+
+/* General Styling */
+/* General Styling */
+.rules-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.rules-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Modal Styling */
+.rules-modal {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #004429;
+    color: white;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    padding: 15px;
+    display: none; /* Initially hidden */
+    z-index: 10;
+}
+
+.rules-modal.active {
+    display: block; /* Show the modal when active */
+}
+
+.modal-content {
+    position: relative;
+    text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: -25px;
+    right: -22px;
+    width: 35px;
+    height: 35px;
+    background-color: #bc1b1b;
+    color: white;
+    border: 4px solid white;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+#game-buttons {
+    display: none;
+    margin-top: 20px;
+}
+
+#game-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#game-buttons button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* @keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} */
+
+
+/* Icons for result display */
+.result-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.icon-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-display img {
+    width: 80px;
+    height: 80px;
+}
+
+.result-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* Play Again Button */
+#play-again {
+    display: none; /* Hidden initially */
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#play-again:hover {
+    background-color: #45a049;
+}
+
+
+/* Keyframe for fade-in */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

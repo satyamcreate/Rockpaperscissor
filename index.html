@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="logo">
+                <p>Rock</p>
+                <p>Paper</p>
+                <p>Scissors</p>
+            </div>
+            <div class="score">
+                <div class="score-card" id="computer-score">
+                    <div class="label">Computer<br>Score:</div>
+                    <p class="score-value">0</p>
+                </div>
+                <div class="score-card" id="user-score">
+                    <div class="label">User<br>Score:</div>
+                    <p class="score-value">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game">
+            <div class="triangle">
+                <img src="images/bg-triangle.svg" class="tri">
+
+                <div class="icon top-icon" onclick="userChoice('rock')">
+                    <img src="images/icons8-fist-67 1.png" alt="Rock">
+                </div>
+                <div class="icon left-icon" onclick="userChoice('scissors')">
+                    <img src="images/17911 1.png" alt="Scissors">
+                </div>
+                <div class="icon right-icon" onclick="userChoice('paper')">
+                    <img src="images/icons8-hand-64 1.png" alt="Paper">
+                </div>
+            </div>
+        </div>
+
+        <div id="result" class="hidden">Make your move!</div>
+        
+        <!-- Result Display for Icons and Message -->
+        <div id="game-result" class="hidden">
+            <div id="user-icon" class="icon">
+                <img src="" alt="User Choice" id="user-choice-img">
+            </div>
+            <div id="result-message">Make your move!</div>
+            <div id="computer-icon" class="icon">
+                <img src="" alt="Computer Choice" id="computer-choice-img">
+            </div>
+        </div>
+
+        <div id="game-buttons" class="hidden">
+            <button id="next-level" onclick="nextRound()">Next</button>
+            <button id="play-again" onclick="playAgain()">Play Again</button>
+        </div>
+
+        <div class="rules-container">
+            <button id="rules-btn" class="rules-button">Rules</button>
+            <div id="rules-modal" class="rules-modal hidden">
+                <div class="modal-content">
+                    <button id="close-rules" class="close-btn">✖</button>
+                    <h2>Game Rules</h2>
+                    <ul type="square">
+                        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                        <li>Agree ahead of time whether you'll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                        <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                        <li>If both players lay down the same hand, each player lays down another hand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="player-pick-container">
+            <p class="player-picked-text">You picked</p>
+            <div id="player-selection" class="circle large">
+              <div class="symbol"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
