@@ -6,7 +6,7 @@
 
 html, body {
     height: 100%;
-    overflow: hidden; /* This will remove any scrolling */
+    overflow: hidden;   
 }
 
 body {
@@ -39,12 +39,10 @@ body {
 }
 
 .score {
-    display: flex; /* Align cards in a row */
-    gap: 15px; /* Space between cards */
-    justify-content: space-between; /* Space cards evenly */
-    align-items: center;
-    
-    
+    display: flex;   
+    gap: 15px;   
+    justify-content: space-between;   
+    align-items: center; 
 }
 
 .score-card{
@@ -86,63 +84,58 @@ body {
 
 .triangle .line {
     position: absolute;
-    width: 100px; /* Adjust width for each line */
-    height: 10px; /* Thickness of the line */
-    background-color: #211f1fcb; /* Line color */
+    width: 100px;   
+    height: 10px;   
+    background-color: #211f1fcb;   
 }
-
-
 
 .triangle .icon {
     position: absolute;
-    width: 90px; /* Adjust icon container size */
+    width: 90px;   
     height: 90px;
-    background: white; /* White background for the circle */
-     /* Add border with a specific color (e.g., coral) */
-    border-radius: 50%; /* Make the container circular */
-    display: flex; /* Center the image inside the circle */
+    background: white;   
+       
+    border-radius: 50%;   
+    display: flex;   
     justify-content: center;
     align-items: center;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);   
 }
 
 .top-icon {
     top: 5%;
-    left: 10%; /* Center horizontally */
+    left: 10%;   
     border: 10px solid #0074B6
 }
 
 .left-icon {
-    bottom: 50%; /* Adjust positioning slightly above the exact bottom */
-    left: 90%; /* Adjust closer to the bottom-left corner */
+    bottom: 50%;   
+    left: 90%;   
     size-adjust: 80%;
     border: 10px solid #BD00FF;
 }
 
 .right-icon {
-    bottom: -15%; /* Adjust positioning slightly above the exact bottom */
-    right: 8%; /* Adjust closer to the bottom-right corner */
+    bottom: -15%;   
+    right: 8%;   
     border: 10px solid #FFA943
 }
 
 .triangle img {
-    width: 100%; /* Make the icons responsive */
+    width: 100%;   
     height: auto;
 }
 
 .triangle .left-icon img {
-    width: 60%; /* Adjust the image size */
-    height: auto; /* Maintain aspect ratio */
+    width: 60%;   
+    height: auto;   
     
 }
 
 .triangle.icon:hover {
     background-color: #45a049;
 }
-
-/* General Styling */
-/* General Styling */
 .rules-container {
     position: relative;
     width: 100%;
@@ -166,10 +159,7 @@ body {
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-
-
-/* Modal Styling */
+  
 .rules-modal {
     position: fixed;
     bottom: 80px;
@@ -181,12 +171,12 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     width: 250px;
     padding: 15px;
-    display: none; /* Initially hidden */
+    display: none;   
     z-index: 10;
 }
 
 .rules-modal.active {
-    display: block; /* Show the modal when active */
+    display: block;   
 }
 
 .modal-content {
@@ -194,7 +184,7 @@ body {
     text-align: center;
 }
 
-/* Close Button */
+  
 .close-btn {
     position: absolute;
     top: -25px;
@@ -244,20 +234,7 @@ body {
 .hidden {
     display: none;
 }
-
-
-
-/* @keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-} */
-
-
-/* Icons for result display */
+  
 .result-display {
     display: flex;
     justify-content: space-between;
@@ -285,9 +262,9 @@ body {
     text-align: center;
 }
 
-/* Play Again Button */
+  
 #play-again {
-    display: none; /* Hidden initially */
+    display: none;   
     margin: 20px auto;
     padding: 10px 20px;
     background-color: #4caf50;
@@ -303,8 +280,6 @@ body {
     background-color: #45a049;
 }
 
-
-/* Keyframe for fade-in */
 @keyframes fade-in {
     from {
         opacity: 0;
